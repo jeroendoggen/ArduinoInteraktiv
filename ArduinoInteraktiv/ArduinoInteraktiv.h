@@ -7,7 +7,6 @@ class ArduinoInteraktiv
 {
   public:
     ArduinoInteraktiv(int pushButton = 11, int Switch = 12, int piezoSensor = A0, int lightSensor = A1, int potentiometer = A2, int focus = 10, int shutter = 9, int flash = 8, int led1 = 2, int led2 = 3);
-    void start();
     void MultiFlash(int time_between_flash_ms = 1000, int flashes = 3);
     //void HighSpeedCapture();
     //void TimeLapse(int interval);
@@ -31,6 +30,15 @@ class ArduinoInteraktiv
   	int _valuePotentiometer;
   	int _valueLightSensor;
   	
+  //Private Function
+    void Init_pinMode();
+    void _flashLight(int time_flash_on = 200);
+  	void _flashOn();
+  	void _flashOff();
+  	void _bulkStart();
+  	void _bulkStop();
+  	void _focusStart();
+  	void _focusStop();
 };
 
 #endif
