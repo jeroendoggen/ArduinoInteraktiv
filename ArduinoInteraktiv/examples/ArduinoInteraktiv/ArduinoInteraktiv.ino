@@ -1,17 +1,19 @@
 #include <ArduinoInteraktiv.h>
 
 
-ArduinoInteraktiv camera(1,2,3,4);
+ArduinoInteraktiv camera = ArduinoInteraktiv();
 
 void setup()
 {
+  camera.start();
 }
 
 void loop()
 {
-  camera.doStuff();
+  camera.MultiFlash(1000,);
   delay(3000);
 }
+
 
 
 
