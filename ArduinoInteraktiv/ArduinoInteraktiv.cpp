@@ -93,7 +93,7 @@ void ArduinoInteraktiv::HighSpeedCapture(int sensor_or_input, int ValueSensorAct
   else if (sensor_or_input >= A0 && sensor_or_input <= A5)
   {
   	state_of_sensor_input = analogRead(sensor_or_input);
-  	if(state_of_sensor_input > ValueSensorActivated)
+  	if(state_of_sensor_input < ValueSensorActivated)
 	{
   	  SinglePicture();
   	}

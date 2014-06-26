@@ -8,5 +8,5 @@ void setup()
 
 void loop()
 {
-  camera.HighSpeedCapture(12);
+  camera.HighSpeedCapture(A1);
 }
