@@ -56,6 +56,20 @@ void ArduinoInteraktiv::SinglePicture(bool flashLight)
   _focusStop();
 }
 
+int ArduinoInteraktiv::GetPushButtonState()
+{  
+  _statePushButton = 0;
+  _statePushButton = digitalRead(_pushButton);
+  return _statePushButton;
+}
+
+int ArduinoInteraktiv::GetSwitchState()
+{
+  _stateSwitch = 0;
+  _stateSwitch = digitalRead(_switch);
+  return _stateSwitch;
+}
+
 void ArduinoInteraktiv::_flashLight(int time_flash_on) 
 {
   _flashOn();

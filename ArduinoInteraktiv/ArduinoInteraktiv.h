@@ -10,6 +10,8 @@ class ArduinoInteraktiv
     void MultiFlash(int time_between_flash_ms = 1000, int flashes = 3);
     //void HighSpeedCapture();
     void SinglePicture(bool flashLight = false);
+    int GetPushButtonState();
+    int GetSwitchState();
   private:
   //SHIELD IN en OUTPUT
     int _pushButton;
