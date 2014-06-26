@@ -56,6 +56,50 @@ void ArduinoInteraktiv::SinglePicture(bool flashLight)
   _focusStop();
 }
 
+void ArduinoInteraktiv::Time_Lapse(int sensor_or_input, int interval, int ValueSensorActivated)
+{
+  int state_of_sensor_input = 0;
+  if (sensor_or_input >= 0 && sensor_or_input <= 13)
+  {
+	state_of_sensor_input = digitalRead(sensor_or_input);
+	if(state_of_sensor_input == HIGH)
+	{
+	  SinglePicture();
+	  delay(interval);
+	}
+  }
+  else if (sensor_or_input >= A0 && sensor_or_input <= A5)
+  {
+  	state_of_sensor_input = analogRead(sensor_or_input);
+  	if(state_of_sensor_input > ValueSensorActivated)
+	{
+  	  SinglePicture();
+  	  delay(interval);
+  	}
+  }
+}
+
+void ArduinoInteraktiv::HighSpeedCapture(int sensor_or_input, int ValueSensorActivated) 
+{
+  int state_of_sensor_input = 0;
+  if (sensor_or_input >= 0 && sensor_or_input <= 13)
+  {
+	state_of_sensor_input = digitalRead(sensor_or_input);
+	if(state_of_sensor_input == HIGH)
+	{
+	  SinglePicture();
+	}
+  }
+  else if (sensor_or_input >= A0 && sensor_or_input <= A5)
+  {
+  	state_of_sensor_input = analogRead(sensor_or_input);
+  	if(state_of_sensor_input > ValueSensorActivated)
+	{
+  	  SinglePicture();
+  	}
+  }
+}
+
 int ArduinoInteraktiv::GetPushButtonState()
 {  
   _statePushButton = 0;
