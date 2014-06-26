@@ -1,7 +1,6 @@
 #include <ArduinoInteraktiv.h>
 
-
-ArduinoInteraktiv camera(1,2,3,4);
+ArduinoInteraktiv camera;
 
 void setup()
 {
@@ -9,9 +8,6 @@ void setup()
 
 void loop()
 {
-  camera.doStuff();
+  camera.MultiFlash();
   delay(3000);
 }
-
-
-
