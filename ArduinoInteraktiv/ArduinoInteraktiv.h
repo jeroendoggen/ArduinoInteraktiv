@@ -12,6 +12,9 @@ class ArduinoInteraktiv
     void SinglePicture(bool flashLight = false);
     int GetPushButtonState();
     int GetSwitchState();
+    int GetPotentiometerValue();
+    int GetPiezoValue();
+    int GetLightSensorValue();
   private:
   //SHIELD IN en OUTPUT
     int _pushButton;

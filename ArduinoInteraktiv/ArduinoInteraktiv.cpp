@@ -70,6 +70,27 @@ int ArduinoInteraktiv::GetSwitchState()
   return _stateSwitch;
 }
 
+int ArduinoInteraktiv::GetPotentiometerValue()
+{
+  _valuePotentiometer = 0;
+  _valuePotentiometer = analogRead(_potentiometer);
+  return _valuePotentiometer;
+}
+
+int ArduinoInteraktiv::GetPiezoValue()
+{
+  _valuePiezoSensor = 0;
+  _valuePiezoSensor = analogRead(_piezoSensor);
+  return _valuePiezoSensor;
+}
+
+int ArduinoInteraktiv::GetLightSensorValue()
+{
+  _valueLightSensor = 0;
+  _valueLightSensor = analogRead(_lightSensor);
+  return _valueLightSensor;
+}
+
 void ArduinoInteraktiv::_flashLight(int time_flash_on) 
 {
   _flashOn();
