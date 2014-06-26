@@ -47,13 +47,92 @@ void ArduinoInteraktiv::SinglePicture(bool flashLight)
   _shutterStart();
   if(flashLight)
   {
-    _flashLight()
+    _flashLight();
   }
   else {
     delay(200);
   } 
   _shutterStop();
   _focusStop();
+}
+
+void ArduinoInteraktiv::Time_Lapse(int sensor_or_input, int interval, int ValueSensorActivated)
+{
+  int state_of_sensor_input = 0;
+  if (sensor_or_input >= 0 && sensor_or_input <= 13)
+  {
+	state_of_sensor_input = digitalRead(sensor_or_input);
+	if(state_of_sensor_input == HIGH)
+	{
+	  SinglePicture();
+	  delay(interval);
+	}
+  }
+  else if (sensor_or_input >= A0 && sensor_or_input <= A5)
+  {
+  	state_of_sensor_input = analogRead(sensor_or_input);
+  	if(state_of_sensor_input > ValueSensorActivated)
+	{
+  	  SinglePicture();
+  	  delay(interval);
+  	}
+  }
+}
+
+void ArduinoInteraktiv::HighSpeedCapture(int sensor_or_input, int ValueSensorActivated) 
+{
+  int state_of_sensor_input = 0;
+  if (sensor_or_input >= 0 && sensor_or_input <= 13)
+  {
+	state_of_sensor_input = digitalRead(sensor_or_input);
+	if(state_of_sensor_input == HIGH)
+	{
+	  SinglePicture();
+	}
+  }
+  else if (sensor_or_input >= A0 && sensor_or_input <= A5)
+  {
+  	state_of_sensor_input = analogRead(sensor_or_input);
+  	if(state_of_sensor_input < ValueSensorActivated)
+	{
+  	  SinglePicture();
+  	}
+  }
+}
+
+int ArduinoInteraktiv::GetPushButtonState()
+{  
+  _statePushButton = 0;
+  _statePushButton = digitalRead(_pushButton);
+  return _statePushButton;
+}
+
+int ArduinoInteraktiv::GetSwitchState()
+{
+  _stateSwitch = 0;
+  _stateSwitch = digitalRead(_switch);
+  return _stateSwitch;
+}
+
+int ArduinoInteraktiv::GetPotentiometerValue()
+{
+  _valuePotentiometer = 0;
+  _valuePotentiometer = analogRead(_potentiometer);
+  return _valuePotentiometer;
+}
+
+int ArduinoInteraktiv::GetPiezoValue()
+{
+  _valuePiezoSensor = 0;
+  _valuePiezoSensor = analogRead(_piezoSensor);
+  return _valuePiezoSensor;
+}
+
+int ArduinoInteraktiv::GetLightSensorValue()
+{
+  _valueLightSensor = 0;
+  _valueLightSensor = analogRead(_lightSensor);
+  return _valueLightSensor;
 }
 
 void ArduinoInteraktiv::_flashLight(int time_flash_on) 
