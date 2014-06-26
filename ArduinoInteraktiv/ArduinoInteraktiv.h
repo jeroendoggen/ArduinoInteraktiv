@@ -9,7 +9,7 @@ class ArduinoInteraktiv
     ArduinoInteraktiv(int pushButton = 11, int Switch = 12, int piezoSensor = A0, int lightSensor = A1, int potentiometer = A2, int focus = 10, int shutter = 9, int flash = 8, int led1 = 2, int led2 = 3);
     void MultiFlash(int time_between_flash_ms = 1000, int flashes = 3);
     //void HighSpeedCapture();
-    //void TimeLapse(int interval);
+    void SinglePicture(bool flashLight = false);
   private:
   //SHIELD IN en OUTPUT
     int _pushButton;

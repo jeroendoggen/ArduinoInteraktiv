@@ -41,6 +41,21 @@ void ArduinoInteraktiv::MultiFlash(int time_between_flash_ms, int flashes)
   _focusStop();
 }
 
+void ArduinoInteraktiv::SinglePicture(bool flashLight)
+{
+  _focusStart();
+  _shutterStart();
+  if(flashLight)
+  {
+    _flashLight()
+  }
+  else {
+    delay(200);
+  } 
+  _shutterStop();
+  _focusStop();
+}
+
 void ArduinoInteraktiv::_flashLight(int time_flash_on) 
 {
   _flashOn();
