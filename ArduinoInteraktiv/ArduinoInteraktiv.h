@@ -35,8 +35,8 @@ class ArduinoInteraktiv
     void _flashLight(int time_flash_on = 200);
   	void _flashOn();
   	void _flashOff();
-  	void _bulkStart();
-  	void _bulkStop();
+  	void _shutterStart();
+  	void _shutterStop();
   	void _focusStart();
   	void _focusStop();
 };

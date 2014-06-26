@@ -31,13 +31,13 @@ void ArduinoInteraktiv::MultiFlash(int time_between_flash_ms, int flashes)
 {
   _focusStart();
   delay(2000);
-  _bulkStart();
+  _shutterStart();
   delay(time_between_flash_ms);
   for (int i=0; i < flashes; i++){
     _flashLight();
     delay(time_between_flash_ms);
   }
-  _bulkStop();
+  _shutterStop();
   _focusStop();
 }
 
@@ -60,11 +60,11 @@ void ArduinoInteraktiv::_flashOff()
   digitalWrite(_led2, LOW);
 }
 
-void ArduinoInteraktiv::_bulkStart() { 
+void ArduinoInteraktiv::_shutterStart() { 
   digitalWrite(_shutter, HIGH);
 }
 
-void ArduinoInteraktiv::_bulkStop() {
+void ArduinoInteraktiv::_shutterStop() {
  digitalWrite(_shutter, LOW); 
 }
 
