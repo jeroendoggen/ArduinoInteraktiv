@@ -47,7 +47,7 @@ void ArduinoInteraktiv::SinglePicture(bool flashLight)
   _shutterStart();
   if(flashLight)
   {
-    _flashLight()
+    _flashLight();
   }
   else {
     delay(200);
