@@ -6,7 +6,7 @@ During the workshop, the participants developed an Arduino shield, Arduino softw
 This library was written to share the results of the workshop with the world.
 
 Hardware support:
- * Nikon D5200
+ * Nikon D5000 series
  * More coming soon...
 
 ## General workflow
@@ -33,8 +33,13 @@ Hardware support:
 ## Examples
 
 ### Multi-flash
- * coming soon
+ * For Multi-Flash mode an external flash is recommended.
+ * Set your camera to bulk mode.
+ * There are a few optional parameters. The interval time and number of flashes.
 
 ### Time-lapse
- * coming soon
+ * The Time-Lapse can be activated by an external input. 
+ * The interval time can be easily adjusted.
  
+### High-Speed Capturing
+ * To use the High-Speed Capturing function you'll need an external input.
