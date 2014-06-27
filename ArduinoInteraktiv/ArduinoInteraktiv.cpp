@@ -14,10 +14,10 @@ ArduinoInteraktiv::ArduinoInteraktiv(int pushButton, int Switch, int piezoSensor
   _flash = flash;
   _led1 = led1;
   _led2 = led2;
-  Init_pinMode();
+  //Init_pinMode();
 }
 
-void ArduinoInteraktiv::Init_pinMode()
+void ArduinoInteraktiv::Start()
 {
   pinMode(_pushButton, INPUT);
   pinMode(_switch, INPUT);
@@ -26,6 +26,11 @@ void ArduinoInteraktiv::Init_pinMode()
   pinMode(_flash, OUTPUT);
   pinMode(_led1, OUTPUT);
   pinMode(_led2, OUTPUT);
+  digitalWrite(_led1, HIGH);
+  digitalWrite(_led2, HIGH);
+  delay(300);
+  digitalWrite(_led1, LOW);
+  digitalWrite(_led2, LOW);
 }
 void ArduinoInteraktiv::MultiFlash(int time_between_flash_ms, int flashes) 
 {
@@ -79,24 +84,48 @@ void ArduinoInteraktiv::Time_Lapse(int sensor_or_input, int interval, int ValueS
   }
 }
 
-void ArduinoInteraktiv::HighSpeedCapture(int sensor_or_input, int ValueSensorActivated) 
+void ArduinoInteraktiv::HighSpeedCapture(int sensor, int interval_sensor_flash, int ValueSensorActivated) 
 {
-  int state_of_sensor_input = 0;
-  if (sensor_or_input >= 0 && sensor_or_input <= 13)
+  if(GetPushButtonState())
   {
-	state_of_sensor_input = digitalRead(sensor_or_input);
-	if(state_of_sensor_input == HIGH)
-	{
-	  SinglePicture();
-	}
+    _highSpeedCaptureEnabled = HIGH;
   }
-  else if (sensor_or_input >= A0 && sensor_or_input <= A5)
+  else if (_highSpeedCaptureEnabled == HIGH)
   {
-  	state_of_sensor_input = analogRead(sensor_or_input);
-  	if(state_of_sensor_input < ValueSensorActivated)
-	{
-  	  SinglePicture();
-  	}
+    int state_of_sensor_input = 0;
+    _focusStart();
+    _shutterStart();
+    if (sensor >= 0 && sensor <= 13 && sensor != _pushButton)
+    {
+	  state_of_sensor_input = digitalRead(sensor);
+	  if(state_of_sensor_input == HIGH)
+	  {
+	  	delay(interval_sensor_flash);
+	    _flashLight();
+	    delay(1000);
+	    _shutterStop();
+   	    _focusStop();
+   	    _highSpeedCaptureEnabled = LOW;
+	  }
+    }
+    else if (sensor >= A0 && sensor <= A5)
+    {
+  	  state_of_sensor_input = analogRead(sensor);
+  	  if(state_of_sensor_input < ValueSensorActivated)
+	  {
+	    delay(interval_sensor_flash);
+	    _flashLight();
+	    delay(1000);
+	    _shutterStop();
+   	    _focusStop();
+   	    _highSpeedCaptureEnabled = LOW;
+  	  }
+    }
+  }
+  else
+  {
+    _shutterStop();
+   	_focusStop();
   }
 }
 

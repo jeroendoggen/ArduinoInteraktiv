@@ -4,6 +4,7 @@ ArduinoInteraktiv camera;
 
 void setup()
 {
+  camera.Start();
 }
 
 void loop()
