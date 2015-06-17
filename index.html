@@ -1,37 +1,28 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Arduino Interaktiv : Experimental photography with the Arduino" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Arduino Interaktiv</title>
+    <meta charset="UTF-8">
+    <title>Arduino Interaktiv by jeroendoggen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Arduino Interaktiv</h1>
+      <h2 class="project-tagline">Experimental photography with the Arduino</h2>
+      <a href="https://github.com/jeroendoggen/ArduinoInteraktiv" class="btn">View on GitHub</a>
+      <a href="https://github.com/jeroendoggen/ArduinoInteraktiv/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/jeroendoggen/ArduinoInteraktiv/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/jeroendoggen/ArduinoInteraktiv">View on GitHub</a>
+    <section class="main-content">
+      <h1>
+<a id="arduino-interaktiv-workshop" class="anchor" href="#arduino-interaktiv-workshop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arduino Interaktiv Workshop</h1>
 
-          <h1 id="project_title">Arduino Interaktiv</h1>
-          <h2 id="project_tagline">Experimental photography with the Arduino</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/jeroendoggen/ArduinoInteraktiv/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/jeroendoggen/ArduinoInteraktiv/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>The Arduino Interaktiv workshop was organised in June 2014 at Fachhochschule St. Pölten (St. Pölten University of Applied Sciences) in Austria.
+<p>The Arduino Interaktiv workshop was organised in June 2014 at Fachhochschule St. Pölten (St. Pölten University of Applied Sciences) in Austria.
 <a href="http://www.animationsummer.at/arduino-interaktiv/">http://www.animationsummer.at/arduino-interaktiv/</a></p>
 
 <p>During the workshop, the participants developed an Arduino shield, Arduino software and created experimental photograps and animations with their new hardware.
@@ -42,8 +33,10 @@ This library was written to share the results of the workshop with the world.</p
 <ul>
 <li>Nikon D5000 series</li>
 <li>More coming soon...</li>
-</ul><h2>
-<a name="general-workflow" class="anchor" href="#general-workflow"><span class="octicon octicon-link"></span></a>General workflow</h2>
+</ul>
+
+<h2>
+<a id="general-workflow" class="anchor" href="#general-workflow" aria-hidden="true"><span class="octicon octicon-link"></span></a>General workflow</h2>
 
 <ul>
 <li>Develop the printed circuit board (Arduino shield)</li>
@@ -51,8 +44,10 @@ This library was written to share the results of the workshop with the world.</p
 <li>Test the hardware with some basic Arduino sketches. (test sensors, test flash,...)</li>
 <li>Write the software to control your own camera</li>
 <li>Experiment and implement your own ideas!</li>
-</ul><h2>
-<a name="building-the-hardware" class="anchor" href="#building-the-hardware"><span class="octicon octicon-link"></span></a>Building the hardware</h2>
+</ul>
+
+<h2>
+<a id="building-the-hardware" class="anchor" href="#building-the-hardware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building the hardware</h2>
 
 <ul>
 <li>Eagle files (schematic, PCB layout)</li>
@@ -60,51 +55,59 @@ This library was written to share the results of the workshop with the world.</p
 <li>Overview of hardware components</li>
 <li>Connectors: most camera's have to own exotic connector (a converter is often needed)</li>
 <li>More info coming soon</li>
-</ul><h2>
-<a name="testing-the-hardware" class="anchor" href="#testing-the-hardware"><span class="octicon octicon-link"></span></a>Testing the hardware</h2>
+</ul>
+
+<h2>
+<a id="testing-the-hardware" class="anchor" href="#testing-the-hardware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing the hardware</h2>
 
 <ul>
 <li>Running the examples one-by-one to verify if everything works as expected</li>
 <li>Common mistakes (soldering mistakes: shorted pins, shorted traces, defected LEDs, loose components,...)</li>
-</ul><h2>
-<a name="setting-up-the-camera" class="anchor" href="#setting-up-the-camera"><span class="octicon octicon-link"></span></a>Setting up the camera</h2>
+</ul>
+
+<h2>
+<a id="setting-up-the-camera" class="anchor" href="#setting-up-the-camera" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting up the camera</h2>
 
 <ul>
 <li>coming soon</li>
-</ul><h2>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+</ul>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
 
 <h3>
-<a name="multi-flash" class="anchor" href="#multi-flash"><span class="octicon octicon-link"></span></a>Multi-flash</h3>
+<a id="multi-flash" class="anchor" href="#multi-flash" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multi-flash</h3>
 
 <ul>
 <li>For Multi-Flash mode an external flash is recommended.</li>
 <li>Set your camera to bulk mode.</li>
 <li>There are a few optional parameters. The interval time and number of flashes.</li>
-</ul><h3>
-<a name="time-lapse" class="anchor" href="#time-lapse"><span class="octicon octicon-link"></span></a>Time-lapse</h3>
+</ul>
+
+<h3>
+<a id="time-lapse" class="anchor" href="#time-lapse" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time-lapse</h3>
 
 <ul>
 <li>The Time-Lapse can be activated by an external input. </li>
 <li>The interval time can be easily adjusted.</li>
-</ul><h3>
-<a name="high-speed-capturing" class="anchor" href="#high-speed-capturing"><span class="octicon octicon-link"></span></a>High-Speed Capturing</h3>
+</ul>
+
+<h3>
+<a id="high-speed-capturing" class="anchor" href="#high-speed-capturing" aria-hidden="true"><span class="octicon octicon-link"></span></a>High-Speed Capturing</h3>
 
 <ul>
 <li>To use the High-Speed Capturing function you'll need an external input.</li>
 </ul>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Arduino Interaktiv maintained by <a href="https://github.com/jeroendoggen">jeroendoggen</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/jeroendoggen/ArduinoInteraktiv">Arduino Interaktiv</a> is maintained by <a href="https://github.com/jeroendoggen">jeroendoggen</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
+
